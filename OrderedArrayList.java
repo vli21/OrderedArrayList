@@ -24,4 +24,14 @@ public class OrderedArrayList<T extends Comparable<T>> extends NoNullArrayList<T
  public void add(int index, T value) {
    add(value);
  }
+ public T set (int index, T value){
+    if (value == null){
+      throw new IllegalArgumentException ("null values cannot be accepted");
+    }else{
+      T x = this.get(index);
+      this.remove(index);
+      add(value);
+      return x;
+      }
+    }
 }
